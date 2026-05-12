@@ -21,7 +21,7 @@
 
 ## Apresentação
 
-[Vídeo de demonstração](https://drive.google.com/drive/folders/1iFZ5N3bZ-zTFKSO7wrfIlDC-y0j5MnkC?usp=sharing)
+[Vídeo de demonstração](https://drive.google.com/drive/folders/1nS5vMZQpd1hzpkj37Ox8CTMt6AKbZQFg?usp=drive_link)
 
 ## Sobre
 
