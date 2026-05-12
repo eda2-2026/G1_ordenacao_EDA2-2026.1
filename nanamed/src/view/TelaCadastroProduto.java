@@ -161,11 +161,9 @@ public class TelaCadastroProduto implements ActionListener {
                     || jtfCdb.getText().equals("")|| jtfDose.getText().equals("")
                     || jtfTipo.getText().equals("")) {
 				JOptionPane.showMessageDialog(salvarMed, "Todos os campos precisam ser preenchidos!");
-			} 
-            } else  if(!jtfDose.getText().matches("[0-9]+")){
-				JOptionPane.showMessageDialog(salvarMed, "Preencha a dosagem com o número de mg. corretamente!");
-      }
-            else{	
+            } else if(!jtfDose.getText().matches("[0-9]+[a-zA-Z]*")){
+				JOptionPane.showMessageDialog(salvarMed, "Preencha a dosagem corretamente (ex: 500mg)!");
+            } else {	
 				
                 String nome = jtfNome.getText();
                 int quantidade = Integer.parseInt(jtfQtd.getText());
@@ -182,17 +180,18 @@ public class TelaCadastroProduto implements ActionListener {
 				JOptionPane.showMessageDialog(salvarMed, "Dados cadastrados com sucesso!");
 				jfrm.dispose();
             }  
+        }
+
         if(src == salvarCos) {
             
 			if (jtfNome.getText().equals("") || jtfQtd.getText().equals("")
 					|| jtfPreco.getText().equals("")|| jtfVal.getText().equals("")
                     || jtfCdb.getText().equals("")|| jtfVol.getText().equals("")
                     || jtfMarca.getText().equals("")) {
-				JOptionPane.showMessageDialog(salvarMed, "Todos os campos precisam ser preenchidos!"); 
-              } else  if(!jtfDose.getText().matches("[0-9]+")){
-				JOptionPane.showMessageDialog(salvarMed, "Preencha volume apenas com números.");
-      }
-            else {
+				JOptionPane.showMessageDialog(salvarCos, "Todos os campos precisam ser preenchidos!"); 
+            } else if(!jtfVol.getText().matches("[0-9]+[a-zA-Z]*")){
+				JOptionPane.showMessageDialog(salvarCos, "Preencha volume corretamente (ex: 100ml).");
+            } else {
 				
 				
 				String nome = jtfNome.getText();

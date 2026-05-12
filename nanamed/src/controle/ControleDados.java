@@ -89,7 +89,7 @@ public class ControleDados {
    */
   public void cadastrarEditarMedicamento(String nome,int quantidade,double preco,String validade,String codigoDeBarra,String dosagem,String tipo,
     int pos,int index) {
-    Medicamento medicamentoTemp = new Medicamento(nome,quantidade,preco,codigoDeBarra,tipo,validade,dosagem);
+    Medicamento medicamentoTemp = new Medicamento(nome,quantidade,preco,validade,codigoDeBarra,dosagem,tipo);
 
     if (index == d.getEmpresa().getFiliais().get(pos).getMedicamento().size()) {
       d.getEmpresa().getFiliais().get(pos).setMedicamento(medicamentoTemp);
