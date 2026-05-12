@@ -18,26 +18,38 @@ public class Dados {
 		private ArrayList<Cosmetico> cosmetico = new ArrayList<Cosmetico>();
 	
     /**
-     * Método que gera filiais aleatórias 
+     * Método que gera filiais com nomes realistas 
      */
 		public void fillWithSomeData() {
-		        for (int i = 0; i <= 5; i++) {
-		        	Filial fil = new Filial("Filial"+i,"cidade"+i,""+(i+1)*1000000);
+						String[] bairros = {"Asa Sul", "Asa Norte", "Sudoeste", "Lago Sul", "Lago Norte", "Taguatinga"};
+						String[] cidades = {"Brasília", "Brasília", "Brasília", "Brasília", "Brasília", "Taguatinga"};
+						String[] telefones = {"3321-1000", "3344-2000", "3233-3000", "3366-4000", "3468-5000", "3351-6000"};
+
+		        for (int i = 0; i < bairros.length; i++) {
+		        	Filial fil = new Filial("Unidade " + bairros[i], cidades[i], telefones[i]);
 					fillCosmeticAndMeds(fil);
 		        	empresa.setFiliais(fil);
 		        }
 		}
     /**
-     * Método que gera Medicamentos e Cosmeticos aleatórios
+     * Método que gera Medicamentos e Cosmeticos realistas
      */
 		
 		public void fillCosmeticAndMeds(Filial fil) {
-			for (int j = 0; j <= 5; j++){
-				Medicamento med = new Medicamento("med"+j,(j+1)*420,(j+2)*1.99,"10/10/202"+(j+2),"101101"+(j*2)*10,(j*50)+"mg","tipo"+j);
-				Cosmetico cos = new Cosmetico("cos"+j,(j+1)*420,(j+2)*1.99,"23/03/202"+(j+2),"10010"+(j*2)*10,(j*50)+"mL","marca"+j);
+			String[] nomesMed = {"Paracetamol", "Amoxicilina", "Dipirona", "Ibuprofeno", "Omeprazol", "Loratadina"};
+			String[] dosagens = {"500mg", "250mg/5ml", "1g", "600mg", "20/mg", "10mg"};
+			String[] tipos = {"Analgésico", "Antibiótico", "Antitérmico", "Anti-inflamatório", "Antiácido", "Antialérgico"};
 
-				fil.getCosmetico().add(cos);
+			String[] nomesCos = {"Protetor Solar", "Hidratante Facial", "Shampoo Anticaspa", "Sabonete Líquido", "Creme de Barbear", "Desodorante Roll-on"};
+			String[] volumes = {"50g", "100ml", "200ml", "250ml", "150g", "50ml"};
+			String[] marcas = {"La Roche", "Nivea", "Head & Shoulders", "Dove", "Bozzano", "Rexona"};
+
+			for (int j = 0; j < nomesMed.length; j++){
+				Medicamento med = new Medicamento(nomesMed[j], (j+1)*15, (j+5)*4.50, "202"+(j+4)+"-12-30", "7891010"+j, dosagens[j], tipos[j]);
+				Cosmetico cos = new Cosmetico(nomesCos[j], (j+2)*10, (j+10)*3.20, "202"+(j+5)+"-06-15", "7892020"+j, volumes[j], marcas[j]);
+
 				fil.getMedicamento().add(med);
+				fil.getCosmetico().add(cos);
 			}
 		}
 		 	

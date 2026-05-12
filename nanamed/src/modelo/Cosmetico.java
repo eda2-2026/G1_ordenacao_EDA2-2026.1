@@ -41,11 +41,11 @@ public class Cosmetico extends Produto {
 		this.marca = marca;
 	}
 	 @Override
-	public String toString() {
-		return "Cosmetico: " +nome+ "| Qtd.: " +quantidade+ "| " +preco+ "$ | Validade:" +validade+ "| Codigo de barras: " +codigoDeBarra+
-				"| Volume: " +volume+ "| Marca:" +marca;
-				
-	}
+	 public String toString() {
+	 return String.format("[COS] %-20s | Qtd: %-4d | R$ %7.2f | Val: %-10s | %s (%s)", 
+	 nome, quantidade, preco, validade, volume, marca);
+	 }
+
 
 	//gets e sets do volume
 	public String getVolume() {

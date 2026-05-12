@@ -41,10 +41,10 @@ public class Medicamento extends Produto {
 
 	@Override
 	public String toString() {
-		return "Medicamento: " +nome+ "| Qtd.: " +quantidade+ "| " +preco+ "$ | Validade:" +validade+ "| Codigo de barras: " +codigoDeBarra+
-				"| Dosagem: " +dosagem+ "| Tipo:" +tipo;
-				
+		return String.format("[MED] %-20s | Qtd: %-4d | R$ %7.2f | Val: %-10s | %s (%s)", 
+				nome, quantidade, preco, validade, dosagem, tipo);
 	}
+
 	//get e set do Tipo
 	public String getTipo() {
 		return tipo;

@@ -86,6 +86,7 @@ public class TelaEstoque implements ActionListener{
 
     listaE = new ControleEstoque(dados, pos).getListaEstoque(dados, pos);
     estoque = new JList<String>(listaE);
+    estoque.setFont(new Font("Monospaced", Font.PLAIN, 12));
 
     estoque.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
     estoque.setVisibleRowCount(10);
