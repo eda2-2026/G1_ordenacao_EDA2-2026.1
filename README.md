@@ -83,6 +83,8 @@ switch (criterio) {
 ```
 
 ## Screenshot
+<img width="795" height="460" alt="image" src="https://github.com/user-attachments/assets/e4222268-a674-4914-bbfc-9db610181fee" />
+
 
 ## Requisitos
 
