@@ -34,6 +34,10 @@ public class TelaEstoque implements ActionListener{
   private JLabel nome = new JLabel("Nome da filial: ");
   private JLabel cidade = new JLabel("Cidade: ");
   private JLabel telefone = new JLabel("Telefone: ");
+  private JLabel sortLabel = new JLabel("Classificado por:");
+
+  private String[] opcoesSort = {"Sem Filtro", "Quantidade", "Validade", "Preco"};
+  private JComboBox<String> sortDropdown = new JComboBox<>(opcoesSort);
 
   private JTextField jtfNome = new JTextField();
   private JTextField jtfCidade = new JTextField();
@@ -73,6 +77,9 @@ public class TelaEstoque implements ActionListener{
     salvar.setBounds(10, 185, 120, 30);
     atualizar.setBounds(290, 220, 90, 30);
     excluir.setBounds(292, 100, 100, 30);
+    
+    sortLabel.setBounds(390, 220, 120, 30);
+    sortDropdown.setBounds(510, 220, 150, 30);
 
     jfrm.setLayout(null);
     jfrm.setSize(800, 500);
@@ -103,12 +110,24 @@ public class TelaEstoque implements ActionListener{
     salvar.addActionListener(this);
     atualizar.addActionListener(this);
     excluir.addActionListener(this);
+    
+    sortDropdown.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        String selecionado = (String) sortDropdown.getSelectedItem();
+        listaE = new ControleEstoque(dados, pos).getListaEstoqueOrdenada(dados, pos, selecionado);
+        estoque.setListData(listaE);
+        estoque.updateUI();
+      }
+    });
 
     jfrm.add(jlab);
     jfrm.add(jlab2);
     jfrm.add(nome);
     jfrm.add(cidade);
     jfrm.add(telefone);
+    jfrm.add(sortLabel);
+    jfrm.add(sortDropdown);
 
     jfrm.add(jtfNome);
     jfrm.add(jtfCidade);
